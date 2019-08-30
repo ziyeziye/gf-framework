@@ -1,0 +1,933 @@
+2019-08-30 09:18:53.257 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:19:37.923 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:21:50.183 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:22:55.962 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:23:50.901 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:25:11.489 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:25:11.514 7656: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:25:46.529 [ERRO] SELECT COUNT(1) FROM `gf_tags` , [], 2019-08-30 09:25:46.447, 2019-08-30 09:25:46.529, 82 ms, 
+Error: Error 1146: Table 'ak_test.gf_tags' doesn't exist 
+Stack:
+1.  github.com/gogf/gf/g/database/gdb.(*dbBase).doQuery
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_base.go:105
+2.  github.com/gogf/gf/g/database/gdb.(*dbBase).Query
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_base.go:86
+3.  github.com/gogf/gf/g/database/gdb.(*dbBase).GetAll
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_base.go:172
+4.  github.com/gogf/gf/g/database/gdb.(*Model).getAll
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_model.go:583
+5.  github.com/gogf/gf/g/database/gdb.(*Model).Count
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_model.go:556
+6.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler.func5
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:199
+7.  github.com/gogf/gf/g/net/ghttp.(*Server).niceCallFunc
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:224
+8.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:198
+9.  github.com/gogf/gf/g/net/ghttp.(*Server).handleRequest
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:127
+10. github.com/gogf/gf/g/net/ghttp.(*Server).defaultHttpHandle
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:23
+
+2019-08-30 09:25:46.546 [ERRO] SELECT * FROM `gf_tags` LIMIT 10 OFFSET 0, [], 2019-08-30 09:25:46.529, 2019-08-30 09:25:46.546, 17 ms, 
+Error: Error 1146: Table 'ak_test.gf_tags' doesn't exist 
+Stack:
+1.  github.com/gogf/gf/g/database/gdb.(*dbBase).doQuery
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_base.go:105
+2.  github.com/gogf/gf/g/database/gdb.(*dbBase).Query
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_base.go:86
+3.  github.com/gogf/gf/g/database/gdb.(*dbBase).GetAll
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_base.go:172
+4.  github.com/gogf/gf/g/database/gdb.(*Model).getAll
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_model.go:583
+5.  github.com/gogf/gf/g/database/gdb.(*Model).All
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_model.go:477
+6.  github.com/gogf/gf/g/database/gdb.(*Model).Structs
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_model.go:515
+7.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler.func5
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:199
+8.  github.com/gogf/gf/g/net/ghttp.(*Server).niceCallFunc
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:224
+9.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:198
+10. github.com/gogf/gf/g/net/ghttp.(*Server).handleRequest
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:127
+11. github.com/gogf/gf/g/net/ghttp.(*Server).defaultHttpHandle
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:23
+
+2019-08-30 09:26:33.492 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:26:33.515 2608: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:26:34.927 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 09:26:34.879, 2019-08-30 09:26:34.927, 48 ms, 
+2019-08-30 09:26:34.928 [DEBU] SELECT * FROM `qu_tags` LIMIT 10 OFFSET 0, [], 2019-08-30 09:26:34.927, 2019-08-30 09:26:34.928, 1 ms, 
+2019-08-30 09:27:50.223 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:27:50.248 7848: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:27:51.967 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 09:27:51.966, 2019-08-30 09:27:51.967, 1 ms, 
+2019-08-30 09:27:51.968 [DEBU] SELECT * FROM `qu_tags` LIMIT 10 OFFSET 0, [], 2019-08-30 09:27:51.968, 2019-08-30 09:27:51.968, 0 ms, 
+2019-08-30 09:27:52.513 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 09:27:52.513, 2019-08-30 09:27:52.513, 0 ms, 
+2019-08-30 09:27:52.514 [DEBU] SELECT * FROM `qu_tags` LIMIT 10 OFFSET 0, [], 2019-08-30 09:27:52.513, 2019-08-30 09:27:52.514, 1 ms, 
+2019-08-30 09:30:08.869 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:30:08.894 11744: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:30:12.242 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 09:30:12.241, 2019-08-30 09:30:12.242, 1 ms, 
+2019-08-30 09:30:12.243 [DEBU] SELECT * FROM `qu_tags` LIMIT 10 OFFSET 0, [], 2019-08-30 09:30:12.242, 2019-08-30 09:30:12.243, 1 ms, 
+2019-08-30 09:31:01.210 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:31:01.234 12060: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:31:02.635 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 09:31:02.633, 2019-08-30 09:31:02.635, 2 ms, 
+2019-08-30 09:32:05.640 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:32:05.665 11828: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:32:08.014 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type=?, [default], 2019-08-30 09:32:08.012, 2019-08-30 09:32:08.014, 2 ms, 
+2019-08-30 09:32:28.131 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:32:28.156 7072: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:32:29.348 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type=?, [default], 2019-08-30 09:32:29.346, 2019-08-30 09:32:29.348, 2 ms, 
+2019-08-30 09:34:30.788 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:34:30.814 7544: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:34:32.169 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type=?, [default], 2019-08-30 09:34:32.168, 2019-08-30 09:34:32.169, 1 ms, 
+2019-08-30 09:36:48.601 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:36:48.625 10944: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:36:50.184 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type=?, [default], 2019-08-30 09:36:50.182, 2019-08-30 09:36:50.184, 2 ms, 
+2019-08-30 09:36:50.184 [DEBU] SELECT * FROM `qu_tags` WHERE type=?, [default], 2019-08-30 09:36:50.184, 2019-08-30 09:36:50.184, 0 ms, 
+2019-08-30 09:37:45.624 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:37:45.650 8864: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:39:51.559 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:39:51.584 10104: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:39:53.979 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 09:39:53.977, 2019-08-30 09:39:53.979, 2 ms, 
+2019-08-30 09:39:53.979 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 09:39:53.979, 2019-08-30 09:39:53.979, 0 ms, 
+2019-08-30 09:41:33.439 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:41:33.464 11700: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:41:42.245 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:41:42.270 10996: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:41:43.677 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 09:41:43.675, 2019-08-30 09:41:43.677, 2 ms, 
+2019-08-30 09:41:43.677 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 09:41:43.677, 2019-08-30 09:41:43.677, 0 ms, 
+2019-08-30 09:42:27.435 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:42:27.460 8216: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:42:29.380 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 09:42:29.379, 2019-08-30 09:42:29.380, 1 ms, 
+2019-08-30 09:42:29.381 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 09:42:29.380, 2019-08-30 09:42:29.380, 0 ms, 
+2019-08-30 09:42:29.381 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 09:42:29.381, 2019-08-30 09:42:29.381, 0 ms, 
+2019-08-30 09:47:50.616 [DEBU] SELECT * FROM `qu_tags` WHERE `id`=? AND `name`=? AND `type`=? AND `hot`=? AND `create_time`=? AND `update_time`=?, [0   0  ], 2019-08-30 09:47:50.614, 2019-08-30 09:47:50.616, 2 ms, 
+2019-08-30 09:48:00.580 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:48:00.605 10456: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:48:03.781 [DEBU] SELECT * FROM `qu_tags` WHERE `id`=? AND `name`=? AND `type`=? AND `hot`=? AND `create_time`=? AND `update_time`=?, [0   0  ], 2019-08-30 09:48:03.779, 2019-08-30 09:48:03.781, 2 ms, 
+2019-08-30 09:49:58.923 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:49:58.947 7384: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:50:00.272 [DEBU] SELECT * FROM `qu_tags` WHERE id=?, [0], 2019-08-30 09:50:00.270, 2019-08-30 09:50:00.272, 2 ms, 
+2019-08-30 09:50:17.096 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:50:17.121 7924: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:50:19.289 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 09:50:19.287, 2019-08-30 09:50:19.289, 2 ms, 
+2019-08-30 09:50:19.292 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 09:50:19.290, 2019-08-30 09:50:19.291, 1 ms, 
+2019-08-30 09:50:19.293 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 09:50:19.293, 2019-08-30 09:50:19.293, 0 ms, 
+2019-08-30 09:51:49.999 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:51:50.024 12276: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:52:23.566 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:52:23.591 2440: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:52:26.872 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 09:52:26.870, 2019-08-30 09:52:26.872, 2 ms, 
+2019-08-30 09:52:26.874 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 09:52:26.873, 2019-08-30 09:52:26.874, 1 ms, 
+2019-08-30 09:52:27.709 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 09:52:27.708, 2019-08-30 09:52:27.709, 1 ms, 
+2019-08-30 09:52:27.710 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 09:52:27.710, 2019-08-30 09:52:27.710, 0 ms, 
+2019-08-30 09:53:27.069 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 09:53:27.065, 2019-08-30 09:53:27.068, 3 ms, 
+2019-08-30 09:53:27.070 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 09:53:27.069, 2019-08-30 09:53:27.070, 1 ms, 
+2019-08-30 09:54:22.933 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:54:22.957 5712: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:54:24.874 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 09:54:24.872, 2019-08-30 09:54:24.874, 2 ms, 
+2019-08-30 09:54:24.875 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 09:54:24.875, 2019-08-30 09:54:24.875, 0 ms, 
+2019-08-30 09:55:19.062 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:55:19.086 3516: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:55:20.754 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 09:55:20.751, 2019-08-30 09:55:20.754, 3 ms, 
+2019-08-30 09:58:02.565 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 09:58:02.589 5220: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 09:58:04.122 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 09:58:04.120, 2019-08-30 09:58:04.122, 2 ms, 
+2019-08-30 09:58:27.897 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 09:58:27.896, 2019-08-30 09:58:27.897, 1 ms, 
+2019-08-30 09:58:41.594 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 09:58:41.592, 2019-08-30 09:58:41.594, 2 ms, 
+2019-08-30 10:02:40.298 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:02:40.296, 2019-08-30 10:02:40.298, 2 ms, 
+2019-08-30 10:03:23.649 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:03:23.676 5016: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 10:03:28.734 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:03:28.733, 2019-08-30 10:03:28.734, 1 ms, 
+2019-08-30 10:06:27.742 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:06:27.767 7076: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |             HANDLER             | HOOK  
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.GetAllTags |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.AddTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.DeleteTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.GetTag     |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.UpdateTag  |       
+|---------|---------|---------|--------|---|------------------|---------------------------------|------|
+
+2019-08-30 10:08:45.516 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:08:45.539 8228: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |                   HANDLER                    | HOOK  
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).GetAllTags-fm |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).AddTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).DeleteTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).GetTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).UpdateTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+
+2019-08-30 10:08:48.688 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:08:48.686, 2019-08-30 10:08:48.688, 2 ms, 
+2019-08-30 10:09:20.240 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:09:20.264 12060: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |                   HANDLER                    | HOOK  
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).GetAllTags-fm |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).AddTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).DeleteTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).GetTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).UpdateTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+
+2019-08-30 10:09:23.555 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:09:23.553, 2019-08-30 10:09:23.555, 2 ms, 
+2019-08-30 10:09:42.887 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:09:42.887, 2019-08-30 10:09:42.887, 0 ms, 
+2019-08-30 10:09:48.196 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:09:48.196, 2019-08-30 10:09:48.196, 0 ms, 
+2019-08-30 10:17:06.385 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:17:06.410 256: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |                   HANDLER                    | HOOK  
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).GetAllTags-fm |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).AddTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).DeleteTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).GetTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).UpdateTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+
+2019-08-30 10:17:15.022 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:17:15.020, 2019-08-30 10:17:15.022, 2 ms, 
+2019-08-30 10:17:15.023 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:17:15.022, 2019-08-30 10:17:15.022, 0 ms, 
+2019-08-30 10:18:35.597 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:18:35.621 1400: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |                   HANDLER                    | HOOK  
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).GetAllTags-fm |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).AddTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).DeleteTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).GetTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).UpdateTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+
+2019-08-30 10:18:39.741 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:18:39.739, 2019-08-30 10:18:39.741, 2 ms, 
+2019-08-30 10:18:39.742 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:18:39.741, 2019-08-30 10:18:39.741, 0 ms, 
+2019-08-30 10:20:04.430 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:20:04.455 9976: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |                   HANDLER                    | HOOK  
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).GetAllTags-fm |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).AddTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).DeleteTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).GetTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).UpdateTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+
+2019-08-30 10:20:19.809 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:20:19.834 9484: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |                   HANDLER                    | HOOK  
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).GetAllTags-fm |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).AddTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).DeleteTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).GetTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).UpdateTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+
+2019-08-30 10:20:33.684 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:20:33.708 6704: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |                   HANDLER                    | HOOK  
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).GetAllTags-fm |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).AddTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).DeleteTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).GetTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).UpdateTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+
+2019-08-30 10:20:35.341 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:35.340, 2019-08-30 10:20:35.341, 1 ms, 
+2019-08-30 10:20:35.496 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:35.494, 2019-08-30 10:20:35.496, 2 ms, 
+2019-08-30 10:20:36.067 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:36.066, 2019-08-30 10:20:36.067, 1 ms, 
+2019-08-30 10:20:36.757 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:36.756, 2019-08-30 10:20:36.756, 0 ms, 
+2019-08-30 10:20:36.758 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:36.758, 2019-08-30 10:20:36.758, 0 ms, 
+2019-08-30 10:20:37.258 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:37.257, 2019-08-30 10:20:37.258, 1 ms, 
+2019-08-30 10:20:37.261 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:37.260, 2019-08-30 10:20:37.261, 1 ms, 
+2019-08-30 10:20:37.407 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:37.404, 2019-08-30 10:20:37.407, 3 ms, 
+2019-08-30 10:20:37.563 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:37.561, 2019-08-30 10:20:37.563, 2 ms, 
+2019-08-30 10:20:37.801 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:37.800, 2019-08-30 10:20:37.801, 1 ms, 
+2019-08-30 10:20:42.865 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:42.865, 2019-08-30 10:20:42.865, 0 ms, 
+2019-08-30 10:20:51.358 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:20:51.383 5348: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |                   HANDLER                    | HOOK  
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).GetAllTags-fm |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).AddTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).DeleteTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).GetTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).UpdateTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+
+2019-08-30 10:20:54.545 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:54.544, 2019-08-30 10:20:54.545, 1 ms, 
+2019-08-30 10:20:54.545 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:20:54.545, 2019-08-30 10:20:54.545, 0 ms, 
+2019-08-30 10:20:55.055 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:55.051, 2019-08-30 10:20:55.055, 4 ms, 
+2019-08-30 10:20:55.056 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:20:55.055, 2019-08-30 10:20:55.055, 0 ms, 
+2019-08-30 10:20:55.465 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:55.465, 2019-08-30 10:20:55.465, 0 ms, 
+2019-08-30 10:20:55.466 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:20:55.466, 2019-08-30 10:20:55.466, 0 ms, 
+2019-08-30 10:20:55.757 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:55.756, 2019-08-30 10:20:55.757, 1 ms, 
+2019-08-30 10:20:55.757 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:20:55.757, 2019-08-30 10:20:55.757, 0 ms, 
+2019-08-30 10:20:55.760 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:55.760, 2019-08-30 10:20:55.760, 0 ms, 
+2019-08-30 10:20:55.761 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:20:55.761, 2019-08-30 10:20:55.761, 0 ms, 
+2019-08-30 10:20:55.912 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:55.912, 2019-08-30 10:20:55.912, 0 ms, 
+2019-08-30 10:20:55.913 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:20:55.912, 2019-08-30 10:20:55.913, 1 ms, 
+2019-08-30 10:20:56.393 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:56.392, 2019-08-30 10:20:56.393, 1 ms, 
+2019-08-30 10:20:56.393 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:20:56.393, 2019-08-30 10:20:56.393, 0 ms, 
+2019-08-30 10:20:56.395 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:56.395, 2019-08-30 10:20:56.395, 0 ms, 
+2019-08-30 10:20:56.396 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:20:56.395, 2019-08-30 10:20:56.396, 1 ms, 
+2019-08-30 10:20:57.000 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:56.999, 2019-08-30 10:20:57.000, 1 ms, 
+2019-08-30 10:20:57.001 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:20:57.000, 2019-08-30 10:20:57.001, 1 ms, 
+2019-08-30 10:20:57.003 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:57.002, 2019-08-30 10:20:57.003, 1 ms, 
+2019-08-30 10:20:57.003 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:20:57.003, 2019-08-30 10:20:57.003, 0 ms, 
+2019-08-30 10:20:57.145 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:57.142, 2019-08-30 10:20:57.145, 3 ms, 
+2019-08-30 10:20:57.146 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:20:57.146, 2019-08-30 10:20:57.146, 0 ms, 
+2019-08-30 10:20:58.007 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:58.006, 2019-08-30 10:20:58.007, 1 ms, 
+2019-08-30 10:20:58.008 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:20:58.008, 2019-08-30 10:20:58.008, 0 ms, 
+2019-08-30 10:20:58.529 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:58.528, 2019-08-30 10:20:58.529, 1 ms, 
+2019-08-30 10:20:58.530 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:20:58.529, 2019-08-30 10:20:58.530, 1 ms, 
+2019-08-30 10:20:58.814 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:58.813, 2019-08-30 10:20:58.814, 1 ms, 
+2019-08-30 10:20:58.814 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:20:58.814, 2019-08-30 10:20:58.814, 0 ms, 
+2019-08-30 10:20:59.064 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:20:59.063, 2019-08-30 10:20:59.064, 1 ms, 
+2019-08-30 10:20:59.064 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:20:59.064, 2019-08-30 10:20:59.064, 0 ms, 
+2019-08-30 10:21:04.125 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:04.124, 2019-08-30 10:21:04.125, 1 ms, 
+2019-08-30 10:21:04.127 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:21:04.125, 2019-08-30 10:21:04.127, 2 ms, 
+2019-08-30 10:21:07.063 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:07.063, 2019-08-30 10:21:07.063, 0 ms, 
+2019-08-30 10:21:07.064 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:21:07.063, 2019-08-30 10:21:07.064, 1 ms, 
+2019-08-30 10:21:07.581 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:07.580, 2019-08-30 10:21:07.581, 1 ms, 
+2019-08-30 10:21:07.581 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:21:07.581, 2019-08-30 10:21:07.581, 0 ms, 
+2019-08-30 10:21:07.853 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:07.852, 2019-08-30 10:21:07.853, 1 ms, 
+2019-08-30 10:21:07.854 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:21:07.853, 2019-08-30 10:21:07.854, 1 ms, 
+2019-08-30 10:21:08.098 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:08.098, 2019-08-30 10:21:08.098, 0 ms, 
+2019-08-30 10:21:08.099 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:21:08.098, 2019-08-30 10:21:08.099, 1 ms, 
+2019-08-30 10:21:08.328 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:08.327, 2019-08-30 10:21:08.328, 1 ms, 
+2019-08-30 10:21:08.329 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:21:08.329, 2019-08-30 10:21:08.329, 0 ms, 
+2019-08-30 10:21:08.549 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:08.548, 2019-08-30 10:21:08.549, 1 ms, 
+2019-08-30 10:21:08.550 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:21:08.550, 2019-08-30 10:21:08.550, 0 ms, 
+2019-08-30 10:21:08.731 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:08.730, 2019-08-30 10:21:08.731, 1 ms, 
+2019-08-30 10:21:08.732 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:21:08.731, 2019-08-30 10:21:08.732, 1 ms, 
+2019-08-30 10:21:17.869 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:21:17.896 8268: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |                   HANDLER                    | HOOK  
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).GetAllTags-fm |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).AddTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).DeleteTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).GetTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).UpdateTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+
+2019-08-30 10:21:19.232 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:19.231, 2019-08-30 10:21:19.232, 1 ms, 
+2019-08-30 10:21:19.682 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:19.681, 2019-08-30 10:21:19.682, 1 ms, 
+2019-08-30 10:21:19.943 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:19.941, 2019-08-30 10:21:19.943, 2 ms, 
+2019-08-30 10:21:20.228 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:20.227, 2019-08-30 10:21:20.228, 1 ms, 
+2019-08-30 10:21:20.497 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:20.497, 2019-08-30 10:21:20.497, 0 ms, 
+2019-08-30 10:21:20.499 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:20.499, 2019-08-30 10:21:20.499, 0 ms, 
+2019-08-30 10:21:20.674 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:20.674, 2019-08-30 10:21:20.674, 0 ms, 
+2019-08-30 10:21:20.989 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:20.988, 2019-08-30 10:21:20.989, 1 ms, 
+2019-08-30 10:21:21.072 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:21.072, 2019-08-30 10:21:21.072, 0 ms, 
+2019-08-30 10:21:21.076 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:21.076, 2019-08-30 10:21:21.076, 0 ms, 
+2019-08-30 10:21:21.214 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:21.213, 2019-08-30 10:21:21.214, 1 ms, 
+2019-08-30 10:21:21.361 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:21.360, 2019-08-30 10:21:21.361, 1 ms, 
+2019-08-30 10:21:21.619 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:21.618, 2019-08-30 10:21:21.619, 1 ms, 
+2019-08-30 10:21:21.837 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:21.836, 2019-08-30 10:21:21.837, 1 ms, 
+2019-08-30 10:21:22.085 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:22.085, 2019-08-30 10:21:22.085, 0 ms, 
+2019-08-30 10:21:22.088 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:22.087, 2019-08-30 10:21:22.088, 1 ms, 
+2019-08-30 10:21:22.257 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:22.252, 2019-08-30 10:21:22.257, 5 ms, 
+2019-08-30 10:21:22.281 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:22.279, 2019-08-30 10:21:22.281, 2 ms, 
+2019-08-30 10:21:22.695 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:22.695, 2019-08-30 10:21:22.695, 0 ms, 
+2019-08-30 10:21:23.129 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:23.129, 2019-08-30 10:21:23.129, 0 ms, 
+2019-08-30 10:21:23.592 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:23.591, 2019-08-30 10:21:23.592, 1 ms, 
+2019-08-30 10:21:23.594 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:23.593, 2019-08-30 10:21:23.594, 1 ms, 
+2019-08-30 10:21:23.759 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:23.758, 2019-08-30 10:21:23.759, 1 ms, 
+2019-08-30 10:21:23.893 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:23.892, 2019-08-30 10:21:23.893, 1 ms, 
+2019-08-30 10:21:24.141 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:24.140, 2019-08-30 10:21:24.141, 1 ms, 
+2019-08-30 10:21:24.381 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:24.379, 2019-08-30 10:21:24.381, 2 ms, 
+2019-08-30 10:21:24.620 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:24.620, 2019-08-30 10:21:24.620, 0 ms, 
+2019-08-30 10:21:24.904 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:24.904, 2019-08-30 10:21:24.904, 0 ms, 
+2019-08-30 10:21:24.906 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:24.905, 2019-08-30 10:21:24.906, 1 ms, 
+2019-08-30 10:21:25.044 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:25.042, 2019-08-30 10:21:25.044, 2 ms, 
+2019-08-30 10:21:25.462 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:25.462, 2019-08-30 10:21:25.462, 0 ms, 
+2019-08-30 10:21:26.394 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:26.394, 2019-08-30 10:21:26.394, 0 ms, 
+2019-08-30 10:21:26.869 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:26.869, 2019-08-30 10:21:26.869, 0 ms, 
+2019-08-30 10:21:27.662 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:27.662, 2019-08-30 10:21:27.662, 0 ms, 
+2019-08-30 10:21:28.280 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:28.279, 2019-08-30 10:21:28.280, 1 ms, 
+2019-08-30 10:21:28.283 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:28.283, 2019-08-30 10:21:28.283, 0 ms, 
+2019-08-30 10:21:28.436 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:28.432, 2019-08-30 10:21:28.435, 3 ms, 
+2019-08-30 10:21:28.501 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:28.499, 2019-08-30 10:21:28.501, 2 ms, 
+2019-08-30 10:21:28.837 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:28.837, 2019-08-30 10:21:28.837, 0 ms, 
+2019-08-30 10:21:28.840 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:28.839, 2019-08-30 10:21:28.840, 1 ms, 
+2019-08-30 10:21:28.980 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:28.979, 2019-08-30 10:21:28.980, 1 ms, 
+2019-08-30 10:21:29.830 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:29.829, 2019-08-30 10:21:29.830, 1 ms, 
+2019-08-30 10:21:30.548 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:30.547, 2019-08-30 10:21:30.547, 0 ms, 
+2019-08-30 10:21:30.864 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:30.863, 2019-08-30 10:21:30.864, 1 ms, 
+2019-08-30 10:21:31.450 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:31.449, 2019-08-30 10:21:31.450, 1 ms, 
+2019-08-30 10:21:31.745 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:31.744, 2019-08-30 10:21:31.745, 1 ms, 
+2019-08-30 10:21:31.960 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:31.959, 2019-08-30 10:21:31.960, 1 ms, 
+2019-08-30 10:21:32.190 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:32.189, 2019-08-30 10:21:32.190, 1 ms, 
+2019-08-30 10:21:32.405 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:32.404, 2019-08-30 10:21:32.404, 0 ms, 
+2019-08-30 10:21:32.596 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:32.595, 2019-08-30 10:21:32.596, 1 ms, 
+2019-08-30 10:21:32.802 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:32.799, 2019-08-30 10:21:32.802, 3 ms, 
+2019-08-30 10:21:33.577 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:33.576, 2019-08-30 10:21:33.577, 1 ms, 
+2019-08-30 10:21:38.630 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:21:38.627, 2019-08-30 10:21:38.630, 3 ms, 
+2019-08-30 10:22:11.249 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:22:11.275 5440: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |                   HANDLER                    | HOOK  
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).GetAllTags-fm |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).AddTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).DeleteTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).GetTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).UpdateTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+
+2019-08-30 10:22:12.723 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:12.721, 2019-08-30 10:22:12.723, 2 ms, 
+2019-08-30 10:22:13.630 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:13.630, 2019-08-30 10:22:13.630, 0 ms, 
+2019-08-30 10:22:14.193 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:14.192, 2019-08-30 10:22:14.193, 1 ms, 
+2019-08-30 10:22:14.595 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:14.594, 2019-08-30 10:22:14.595, 1 ms, 
+2019-08-30 10:22:14.828 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:14.828, 2019-08-30 10:22:14.828, 0 ms, 
+2019-08-30 10:22:15.049 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:15.048, 2019-08-30 10:22:15.049, 1 ms, 
+2019-08-30 10:22:15.312 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:15.312, 2019-08-30 10:22:15.312, 0 ms, 
+2019-08-30 10:22:15.574 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:15.573, 2019-08-30 10:22:15.574, 1 ms, 
+2019-08-30 10:22:15.641 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:15.640, 2019-08-30 10:22:15.641, 1 ms, 
+2019-08-30 10:22:16.055 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:16.054, 2019-08-30 10:22:16.055, 1 ms, 
+2019-08-30 10:22:16.309 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:16.308, 2019-08-30 10:22:16.309, 1 ms, 
+2019-08-30 10:22:16.533 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:16.533, 2019-08-30 10:22:16.533, 0 ms, 
+2019-08-30 10:22:16.828 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:16.828, 2019-08-30 10:22:16.828, 0 ms, 
+2019-08-30 10:22:16.898 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:16.898, 2019-08-30 10:22:16.898, 0 ms, 
+2019-08-30 10:22:17.798 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:17.798, 2019-08-30 10:22:17.798, 0 ms, 
+2019-08-30 10:22:35.031 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:22:35.056 11684: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |                   HANDLER                    | HOOK  
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).GetAllTags-fm |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).AddTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).DeleteTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).GetTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).UpdateTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+
+2019-08-30 10:22:38.005 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:38.004, 2019-08-30 10:22:38.005, 1 ms, 
+2019-08-30 10:22:38.006 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:22:38.006, 2019-08-30 10:22:38.006, 0 ms, 
+2019-08-30 10:22:38.811 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:38.811, 2019-08-30 10:22:38.811, 0 ms, 
+2019-08-30 10:22:38.812 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:22:38.812, 2019-08-30 10:22:38.812, 0 ms, 
+2019-08-30 10:22:39.757 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:22:39.756, 2019-08-30 10:22:39.757, 1 ms, 
+2019-08-30 10:22:39.757 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:22:39.757, 2019-08-30 10:22:39.757, 0 ms, 
+2019-08-30 10:23:02.615 [DEBU] SELECT COUNT(1) FROM `qu_tags`  WHERE type like ?, [%defa%], 2019-08-30 10:23:02.614, 2019-08-30 10:23:02.615, 1 ms, 
+2019-08-30 10:23:02.616 [DEBU] SELECT * FROM `qu_tags` WHERE type like ?, [%defa%], 2019-08-30 10:23:02.616, 2019-08-30 10:23:02.616, 0 ms, 
+2019-08-30 10:24:01.981 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:24:02.006 11036: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |                   HANDLER                    | HOOK  
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).GetAllTags-fm |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).AddTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).DeleteTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).GetTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).UpdateTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+
+2019-08-30 10:24:05.252 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:24:05.249, 2019-08-30 10:24:05.252, 3 ms, 
+2019-08-30 10:24:05.253 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:24:05.252, 2019-08-30 10:24:05.253, 1 ms, 
+2019-08-30 10:24:06.014 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:24:06.013, 2019-08-30 10:24:06.014, 1 ms, 
+2019-08-30 10:24:06.014 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:24:06.014, 2019-08-30 10:24:06.014, 0 ms, 
+2019-08-30 10:24:53.615 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:24:53.638 5812: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |                   HANDLER                    | HOOK  
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).GetAllTags-fm |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).AddTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).DeleteTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).GetTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).UpdateTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+
+2019-08-30 10:24:54.770 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:24:54.768, 2019-08-30 10:24:54.769, 1 ms, 
+2019-08-30 10:24:54.770 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:24:54.770, 2019-08-30 10:24:54.770, 0 ms, 
+2019-08-30 10:24:55.087 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:24:55.084, 2019-08-30 10:24:55.087, 3 ms, 
+2019-08-30 10:24:55.088 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:24:55.087, 2019-08-30 10:24:55.088, 1 ms, 
+2019-08-30 10:24:55.508 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:24:55.508, 2019-08-30 10:24:55.508, 0 ms, 
+2019-08-30 10:24:55.508 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:24:55.508, 2019-08-30 10:24:55.508, 0 ms, 
+2019-08-30 10:25:00.553 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:00.552, 2019-08-30 10:25:00.553, 1 ms, 
+2019-08-30 10:25:00.553 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:00.553, 2019-08-30 10:25:00.553, 0 ms, 
+2019-08-30 10:25:09.022 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:25:09.047 5912: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |                   HANDLER                    | HOOK  
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).GetAllTags-fm |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).AddTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).DeleteTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).GetTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).UpdateTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+
+2019-08-30 10:25:12.128 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:12.127, 2019-08-30 10:25:12.128, 1 ms, 
+2019-08-30 10:25:12.128 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:12.128, 2019-08-30 10:25:12.128, 0 ms, 
+2019-08-30 10:25:12.661 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:12.660, 2019-08-30 10:25:12.661, 1 ms, 
+2019-08-30 10:25:12.661 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:12.661, 2019-08-30 10:25:12.661, 0 ms, 
+2019-08-30 10:25:13.093 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:13.093, 2019-08-30 10:25:13.093, 0 ms, 
+2019-08-30 10:25:13.094 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:13.094, 2019-08-30 10:25:13.094, 0 ms, 
+2019-08-30 10:25:14.053 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:14.052, 2019-08-30 10:25:14.053, 1 ms, 
+2019-08-30 10:25:14.053 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:14.053, 2019-08-30 10:25:14.053, 0 ms, 
+2019-08-30 10:25:14.693 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:14.693, 2019-08-30 10:25:14.693, 0 ms, 
+2019-08-30 10:25:14.693 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:14.693, 2019-08-30 10:25:14.693, 0 ms, 
+2019-08-30 10:25:15.638 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:15.637, 2019-08-30 10:25:15.638, 1 ms, 
+2019-08-30 10:25:15.638 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:15.638, 2019-08-30 10:25:15.638, 0 ms, 
+2019-08-30 10:25:15.640 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:15.640, 2019-08-30 10:25:15.640, 0 ms, 
+2019-08-30 10:25:15.640 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:15.640, 2019-08-30 10:25:15.640, 0 ms, 
+2019-08-30 10:25:15.769 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:15.768, 2019-08-30 10:25:15.769, 1 ms, 
+2019-08-30 10:25:15.771 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:15.770, 2019-08-30 10:25:15.771, 1 ms, 
+2019-08-30 10:25:16.271 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:16.271, 2019-08-30 10:25:16.271, 0 ms, 
+2019-08-30 10:25:16.272 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:16.272, 2019-08-30 10:25:16.272, 0 ms, 
+2019-08-30 10:25:16.732 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:16.731, 2019-08-30 10:25:16.732, 1 ms, 
+2019-08-30 10:25:16.732 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:16.732, 2019-08-30 10:25:16.732, 0 ms, 
+2019-08-30 10:25:17.076 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:17.076, 2019-08-30 10:25:17.076, 0 ms, 
+2019-08-30 10:25:17.077 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:17.077, 2019-08-30 10:25:17.077, 0 ms, 
+2019-08-30 10:25:17.338 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:17.337, 2019-08-30 10:25:17.338, 1 ms, 
+2019-08-30 10:25:17.339 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:17.339, 2019-08-30 10:25:17.339, 0 ms, 
+2019-08-30 10:25:17.597 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:17.596, 2019-08-30 10:25:17.597, 1 ms, 
+2019-08-30 10:25:17.597 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:17.597, 2019-08-30 10:25:17.597, 0 ms, 
+2019-08-30 10:25:17.833 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:17.833, 2019-08-30 10:25:17.833, 0 ms, 
+2019-08-30 10:25:17.834 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:17.833, 2019-08-30 10:25:17.834, 1 ms, 
+2019-08-30 10:25:18.100 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:18.099, 2019-08-30 10:25:18.100, 1 ms, 
+2019-08-30 10:25:18.101 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:18.100, 2019-08-30 10:25:18.101, 1 ms, 
+2019-08-30 10:25:18.350 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:18.350, 2019-08-30 10:25:18.350, 0 ms, 
+2019-08-30 10:25:18.352 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:18.351, 2019-08-30 10:25:18.352, 1 ms, 
+2019-08-30 10:25:23.399 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:23.398, 2019-08-30 10:25:23.399, 1 ms, 
+2019-08-30 10:25:23.400 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:23.399, 2019-08-30 10:25:23.400, 1 ms, 
+2019-08-30 10:25:53.431 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:25:53.430, 2019-08-30 10:25:53.431, 1 ms, 
+2019-08-30 10:25:53.432 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:25:53.431, 2019-08-30 10:25:53.432, 1 ms, 
+2019-08-30 10:26:09.630 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 10:26:09.656 832: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |                   HANDLER                    | HOOK  
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).GetAllTags-fm |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).AddTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).DeleteTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).GetTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).UpdateTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+
+2019-08-30 10:26:11.230 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:26:11.229, 2019-08-30 10:26:11.230, 1 ms, 
+2019-08-30 10:26:11.231 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:26:11.231, 2019-08-30 10:26:11.231, 0 ms, 
+2019-08-30 10:26:11.998 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 10:26:11.997, 2019-08-30 10:26:11.998, 1 ms, 
+2019-08-30 10:26:11.998 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 10:26:11.998, 2019-08-30 10:26:11.998, 0 ms, 
+2019-08-30 11:39:09.341 [DEBU] [ghttp] SetServerRoot path: D:\GoWork\website\gf-framework\public
+2019-08-30 11:39:09.366 12280: http server started listening on [:80]
+
+  SERVER  | ADDRESS | DOMAIN  | METHOD | P |      ROUTE       |                   HANDLER                    | HOOK  
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).GetAllTags-fm |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | POST   | 3 | /api/v1/tags     | framework/app/api/v1.(*TagApi).AddTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | DELETE | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).DeleteTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | GET    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).GetTag-fm     |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+  default | :80     | default | PUT    | 4 | /api/v1/tags/:id | framework/app/api/v1.(*TagApi).UpdateTag-fm  |       
+|---------|---------|---------|--------|---|------------------|----------------------------------------------|------|
+
+2019-08-30 11:39:12.699 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 11:39:12.693, 2019-08-30 11:39:12.699, 6 ms, 
+2019-08-30 11:39:12.700 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 11:39:12.699, 2019-08-30 11:39:12.700, 1 ms, 
+2019-08-30 11:39:12.898 [DEBU] SELECT COUNT(1) FROM `qu_tags` , [], 2019-08-30 11:39:12.898, 2019-08-30 11:39:12.898, 0 ms, 
+2019-08-30 11:39:12.898 [DEBU] SELECT * FROM `qu_tags`, [], 2019-08-30 11:39:12.898, 2019-08-30 11:39:12.898, 0 ms, 

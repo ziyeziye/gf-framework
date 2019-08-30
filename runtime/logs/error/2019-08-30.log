@@ -1,0 +1,147 @@
+2019-08-30 09:26:34.929 [ERRO] reflect.MakeSlice of non-slice type, "GET http 127.0.0.1 /api/v1/tags HTTP/1.1" 49.130, 127.0.0.1, "", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36" 
+Stack:
+1.  github.com/gogf/gf/g/net/ghttp.(*Server).handleRequest.func1
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:67
+2.  github.com/gogf/gf/g/net/ghttp.(*Server).niceCallFunc.func1
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:220
+3.  github.com/gogf/gf/g/database/gdb.Result.ToStructs
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_type_result.go:114
+4.  github.com/gogf/gf/g/database/gdb.(*Model).Structs
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_model.go:519
+5.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler.func5
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:199
+6.  github.com/gogf/gf/g/net/ghttp.(*Server).niceCallFunc
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:224
+7.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:198
+8.  github.com/gogf/gf/g/net/ghttp.(*Server).handleRequest
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:127
+9.  github.com/gogf/gf/g/net/ghttp.(*Server).defaultHttpHandle
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:23
+
+2019-08-30 09:27:51.969 [ERRO] reflect.MakeSlice of non-slice type, "GET http 127.0.0.1 /api/v1/tags HTTP/1.1" 18.050, 127.0.0.1, "", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36" 
+Stack:
+1.  github.com/gogf/gf/g/net/ghttp.(*Server).handleRequest.func1
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:67
+2.  github.com/gogf/gf/g/net/ghttp.(*Server).niceCallFunc.func1
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:220
+3.  github.com/gogf/gf/g/database/gdb.Result.ToStructs
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_type_result.go:114
+4.  github.com/gogf/gf/g/database/gdb.(*Model).Structs
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_model.go:519
+5.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler.func5
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:199
+6.  github.com/gogf/gf/g/net/ghttp.(*Server).niceCallFunc
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:224
+7.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:198
+8.  github.com/gogf/gf/g/net/ghttp.(*Server).handleRequest
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:127
+9.  github.com/gogf/gf/g/net/ghttp.(*Server).defaultHttpHandle
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:23
+
+2019-08-30 09:27:52.514 [ERRO] reflect.MakeSlice of non-slice type, "GET http 127.0.0.1 /api/v1/tags HTTP/1.1" 2.005, 127.0.0.1, "", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36" 
+Stack:
+1.  github.com/gogf/gf/g/net/ghttp.(*Server).handleRequest.func1
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:67
+2.  github.com/gogf/gf/g/net/ghttp.(*Server).niceCallFunc.func1
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:220
+3.  github.com/gogf/gf/g/database/gdb.Result.ToStructs
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_type_result.go:114
+4.  github.com/gogf/gf/g/database/gdb.(*Model).Structs
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_model.go:519
+5.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler.func5
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:199
+6.  github.com/gogf/gf/g/net/ghttp.(*Server).niceCallFunc
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:224
+7.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:198
+8.  github.com/gogf/gf/g/net/ghttp.(*Server).handleRequest
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:127
+9.  github.com/gogf/gf/g/net/ghttp.(*Server).defaultHttpHandle
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:23
+
+2019-08-30 09:30:12.243 [ERRO] reflect.MakeSlice of non-slice type, "GET http 127.0.0.1 /api/v1/tags HTTP/1.1" 3.002, 127.0.0.1, "", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36" 
+Stack:
+1.  github.com/gogf/gf/g/net/ghttp.(*Server).handleRequest.func1
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:67
+2.  github.com/gogf/gf/g/net/ghttp.(*Server).niceCallFunc.func1
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:220
+3.  github.com/gogf/gf/g/database/gdb.Result.ToStructs
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_type_result.go:114
+4.  github.com/gogf/gf/g/database/gdb.(*Model).Structs
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_model.go:519
+5.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler.func5
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:199
+6.  github.com/gogf/gf/g/net/ghttp.(*Server).niceCallFunc
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:224
+7.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:198
+8.  github.com/gogf/gf/g/net/ghttp.(*Server).handleRequest
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:127
+9.  github.com/gogf/gf/g/net/ghttp.(*Server).defaultHttpHandle
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:23
+
+2019-08-30 09:36:50.185 [ERRO] reflect.MakeSlice of non-slice type, "GET http 127.0.0.1 /api/v1/tags HTTP/1.1" 21.362, 127.0.0.1, "", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36" 
+Stack:
+1.  github.com/gogf/gf/g/net/ghttp.(*Server).handleRequest.func1
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:67
+2.  github.com/gogf/gf/g/net/ghttp.(*Server).niceCallFunc.func1
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:220
+3.  github.com/gogf/gf/g/database/gdb.Result.ToStructs
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_type_result.go:114
+4.  github.com/gogf/gf/g/database/gdb.(*Model).Structs
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_model.go:519
+5.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler.func5
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:199
+6.  github.com/gogf/gf/g/net/ghttp.(*Server).niceCallFunc
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:224
+7.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:198
+8.  github.com/gogf/gf/g/net/ghttp.(*Server).handleRequest
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:127
+9.  github.com/gogf/gf/g/net/ghttp.(*Server).defaultHttpHandle
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:23
+
+2019-08-30 09:39:53.980 [ERRO] reflect.MakeSlice of non-slice type, "GET http 127.0.0.1 /api/v1/tags HTTP/1.1" 4.001, 127.0.0.1, "", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36" 
+Stack:
+1.  github.com/gogf/gf/g/net/ghttp.(*Server).handleRequest.func1
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:67
+2.  github.com/gogf/gf/g/net/ghttp.(*Server).niceCallFunc.func1
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:220
+3.  github.com/gogf/gf/g/database/gdb.Result.ToStructs
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_type_result.go:114
+4.  github.com/gogf/gf/g/database/gdb.(*Model).Structs
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_model.go:519
+5.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler.func5
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:199
+6.  github.com/gogf/gf/g/net/ghttp.(*Server).niceCallFunc
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:224
+7.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:198
+8.  github.com/gogf/gf/g/net/ghttp.(*Server).handleRequest
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:127
+9.  github.com/gogf/gf/g/net/ghttp.(*Server).defaultHttpHandle
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:23
+
+2019-08-30 09:42:29.382 [ERRO] reflect.MakeSlice of non-slice type, "GET http 127.0.0.1 /api/v1/tags HTTP/1.1" 2.973, 127.0.0.1, "", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36" 
+Stack:
+1.  github.com/gogf/gf/g/net/ghttp.(*Server).handleRequest.func1
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:67
+2.  github.com/gogf/gf/g/net/ghttp.(*Server).niceCallFunc.func1
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:220
+3.  github.com/gogf/gf/g/database/gdb.Result.ToStructs
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_type_result.go:114
+4.  github.com/gogf/gf/g/database/gdb.(*Model).Structs
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/database/gdb/gdb_model.go:519
+5.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler.func5
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:199
+6.  github.com/gogf/gf/g/net/ghttp.(*Server).niceCallFunc
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:224
+7.  github.com/gogf/gf/g/net/ghttp.(*Server).callServeHandler
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:198
+8.  github.com/gogf/gf/g/net/ghttp.(*Server).handleRequest
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:127
+9.  github.com/gogf/gf/g/net/ghttp.(*Server).defaultHttpHandle
+    D:/GOPATH/pkg/mod/github.com/gogf/gf@v1.8.3/g/net/ghttp/ghttp_server_handler.go:23
+
