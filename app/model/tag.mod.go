@@ -21,7 +21,7 @@ func (t Tag) TableName() string {
 }
 
 func GetTag(id int) (tag *Tag, err error) {
-	err = TagModel.Where("id", id).Struct(tag)
+	err = TagModel.Where("id", id).Struct(&tag)
 	if err != nil && err != sql.ErrNoRows {
 		return
 	}
@@ -33,7 +33,7 @@ func GetTags(maps map[string]interface{}) (tags []*Tag, err error) {
 	if err != nil {
 		return
 	}
-	err = query.Structs(tags)
+	err = query.Structs(&tags)
 	if err != nil && err != sql.ErrNoRows {
 		return nil, err
 	}

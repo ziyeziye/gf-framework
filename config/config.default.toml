@@ -2,7 +2,7 @@
 [app]
     run_debug       = "true"
     app_name        = "gf-framework"
-    app_host        = "127.0.0.1/"
+    app_host        = "http://127.0.0.1"
     page_size       = "10"
     max_page_size   = "50"
     jwt_secret      = "23347$040412"

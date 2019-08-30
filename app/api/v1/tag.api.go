@@ -45,8 +45,8 @@ func (c *TagApi) GetAllTags(r *ghttp.Request) {
 }
 
 func (c *TagApi) GetTag(r *ghttp.Request) {
-	id := r.GetParam("id")
-	tag, err := model.GetTag(id.Int())
+	id := r.GetInt("id")
+	tag, err := model.GetTag(id)
 
 	respJson := response.Json(r)
 	if err == nil && tag.ID > 0 {
@@ -72,10 +72,10 @@ func (c *TagApi) AddTag(r *ghttp.Request) {
 }
 
 func (c *TagApi) UpdateTag(r *ghttp.Request) {
-	id := r.GetParam("id")
+	id := r.GetInt("id")
 	maps := make(map[string]interface{})
 
-	tag, err := model.GetTag(id.Int())
+	tag, err := model.GetTag(id)
 
 	respJson := response.Json(r)
 	if err == nil && tag.ID > 0 {
@@ -91,8 +91,8 @@ func (c *TagApi) UpdateTag(r *ghttp.Request) {
 }
 
 func (c *TagApi) DeleteTag(r *ghttp.Request) {
-	id := r.GetParam("id")
-	tag, err := model.GetTag(id.Int())
+	id := r.GetInt("id")
+	tag, err := model.GetTag(id)
 
 	respJson := response.Json(r)
 	if err != nil {
